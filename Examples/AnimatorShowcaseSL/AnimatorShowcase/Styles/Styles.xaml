@@ -1,0 +1,20 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	
+	<!-- SOLID COLOR BRUSH -->
+	<SolidColorBrush x:Key="AquaSolidBrush" Color="#FF00F6FF"/>
+	
+	<!-- GRADIENT COLOR BRUSH -->
+	<RadialGradientBrush x:Key="BlueGradientBrush" GradientOrigin="-0.064,1.106" RadiusX="0.678" RadiusY="0.678">
+		<GradientStop Color="#FF178AA1" Offset="0"/>
+		<GradientStop Color="#FF00DFFF" Offset="1"/>
+	</RadialGradientBrush>
+	
+	<RadialGradientBrush x:Key="OrangeGradientBrush" GradientOrigin="-0.064,1.106" RadiusX="0.678" RadiusY="0.678">
+		<GradientStop Color="#FFA19017" Offset="0"/>
+		<GradientStop Color="#FFE7B600" Offset="1"/>
+	</RadialGradientBrush>
+	<SolidColorBrush x:Key="GreyBrush" Color="#FF575757"/>
+	<!-- Resource dictionary entries should be defined here. -->
+</ResourceDictionary>

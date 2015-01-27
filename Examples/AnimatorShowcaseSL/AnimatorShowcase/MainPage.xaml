@@ -1,0 +1,91 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:AnimatorShowcase" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	x:Class="AnimatorShowcase.MainPage"
+	d:DesignWidth="590" d:DesignHeight="500" mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot" Background="#FFB3B3B3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="0,8,8,8" Grid.Column="1">
+            <Border x:Name="bounds" Background="#19FFFFFF" BorderBrush="#19000000" Width="467" Height="484" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Canvas x:Name="canvas" Margin="0,0,109,8">
+                <local:RoundedSquare d:LayoutOverrides="Width, Height" Opacity="0.68">
+                    <local:RoundedSquare.Projection>
+                        <PlaneProjection LocalOffsetZ="-34" RotationX="114" RotationY="-22"/>
+                    </local:RoundedSquare.Projection>
+                </local:RoundedSquare>
+                <local:RoundedSquare Opacity="0.68" d:LayoutOverrides="Width, Height">
+                    <local:RoundedSquare.Projection>
+                        <PlaneProjection LocalOffsetZ="-26" RotationX="114" RotationY="-22"/>
+                    </local:RoundedSquare.Projection>
+                </local:RoundedSquare>
+                <local:RoundedSquare Opacity="0.68" d:LayoutOverrides="Width, Height">
+                    <local:RoundedSquare.Projection>
+                        <PlaneProjection LocalOffsetZ="-15" RotationX="114" RotationY="-22"/>
+                    </local:RoundedSquare.Projection>
+                </local:RoundedSquare>
+                <local:RoundedSquare Opacity="0.68" d:LayoutOverrides="Width, Height">
+                    <local:RoundedSquare.Projection>
+                        <PlaneProjection LocalOffsetZ="-11" RotationX="114" RotationY="-22"/>
+                    </local:RoundedSquare.Projection>
+                </local:RoundedSquare>
+                <local:RoundedSquare Opacity="0.68" d:LayoutOverrides="Width, Height">
+                    <local:RoundedSquare.Projection>
+                        <PlaneProjection RotationX="114" RotationY="-22"/>
+                    </local:RoundedSquare.Projection>
+                </local:RoundedSquare>
+            </Canvas>
+        </Grid>
+        <StackPanel x:Name="panel" Margin="5,5,10,0" VerticalAlignment="Top">
+            <StackPanel Orientation="Vertical" Margin="0,0,0,20">
+                <HyperlinkButton NavigateUri="http://artefactanimator.codeplex.com/" TargetName="_blank" ToolTipService.ToolTip="Link: http://artefactanimator.codeplex.com/" >
+                	<TextBlock Text="ARTEFACT ANIMATOR" Foreground="White" Margin="0,0,0,5" TextWrapping="Wrap" FontSize="9.333" Width="115" />
+                </HyperlinkButton>
+                <TextBlock x:Name="versionTxt" Text="VERSION:" Foreground="{StaticResource GreyBrush}" Margin="0,0,0,20" FontSize="9.333" TextWrapping="Wrap" />
+                <TextBlock Text="EASE OBJECT COUNT" Foreground="White" Margin="-1,0,1,5" TextWrapping="Wrap" FontSize="9.333" ToolTipService.ToolTip="Current EaseObjects in memory" />
+                <TextBlock x:Name="countTxt" Text="0" Foreground="{StaticResource GreyBrush}" Margin="0,0,0,5" ToolTipService.ToolTip="Current EaseObjects in memory" />
+                <TextBlock Text="FRAMES PER SECOND" Foreground="White" Margin="-1,0,1,5" TextWrapping="Wrap" FontSize="9.333" />
+                <Grid Height="16">
+                	<TextBlock x:Name="frameTxt" Text="0" Foreground="{StaticResource GreyBrush}" d:LayoutOverrides="Height" />
+                	<Path Data="M101.66666,-0.33499837 L101.66666,9.875001" HorizontalAlignment="Right" Margin="0,0,22,4.79" StrokeStartLineCap="Flat" Stretch="Fill" StrokeEndLineCap="Flat" Stroke="#FF5A5A5A" StrokeThickness="1" StrokeMiterLimit="10" StrokeLineJoin="Miter" UseLayoutRounding="False" Width="1" RenderTransformOrigin="0.5,0.5">
+                		<Path.RenderTransform>
+                			<CompositeTransform x:Name="fpsLineTrans" Rotation="90" TranslateX="2.8949999809265137" TranslateY="2.8949999809265137"/>
+                		</Path.RenderTransform>
+                	</Path>
+                </Grid>
+            </StackPanel>
+            <StackPanel x:Name="views" Orientation="Vertical" Margin="0,0,0,10">
+                <TextBlock Text="VIEWS" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,5" />
+                <Button x:Name="stackBtn" Content="Stack" Click="StackBtnClick" Margin="0,0,0,5"/>
+                <Button x:Name="pileBtn" Content="Pile" Click="PileBtnClick" Margin="0,0,0,5"/>
+                <Button x:Name="gridBtn" Content="Grid" Click="GridBtnClick" Margin="0,0,0,5"/>
+            </StackPanel>
+            <Grid x:Name="options">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Options" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,5.5" d:LayoutOverrides="Height" VerticalAlignment="Top" />
+                <StackPanel x:Name="stackOptions" Orientation="Vertical" Grid.Row="1" d:LayoutOverrides="Height">
+                    <Button x:Name="stackStackBtn" Content="Stack" Margin="0,0,0,5" Click="StackStackBtnClick" />
+                    <Button x:Name="circleBtn" Content="Circle" Margin="0,0,0,5" Click="CircleBtnClick" />
+                </StackPanel>
+                <StackPanel x:Name="pileOptions" Orientation="Vertical" Grid.Row="2" d:LayoutOverrides="Height">
+                    <Button x:Name="pileRandomizeBtn" Content="Randomize" Margin="0,0,0,5" Click="PileRandomizeBtnClick" Visibility="Collapsed" />
+                </StackPanel>
+                <StackPanel x:Name="gridOptions" Orientation="Vertical" Grid.Row="3" d:LayoutOverrides="Height">
+                    <Button x:Name="gridRandomizeBtn" Content="Randomize Size" Click="GridRandomBtnClick" Margin="0,0,0,5" />
+                    <Button x:Name="gridResortBtn" Content="Resort" Margin="0,0,0,5" Click="GridResortBtnClick" />
+                </StackPanel>
+
+
+            </Grid>
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>
