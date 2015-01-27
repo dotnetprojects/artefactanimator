@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22512.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtefactAnimatorSilverlightTest", "ArtefactAnimatorSilverlightTest\ArtefactAnimatorSilverlightTest.csproj", "{51796C27-EF1F-4281-962A-99523C84AF86}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtefactSL", "Artefact\ArtefactSL.csproj", "{0CFB77F1-F331-4541-93C1-A06FA86A08DB}"
