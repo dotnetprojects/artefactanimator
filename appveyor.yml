@@ -19,6 +19,9 @@ before_build:
 build:
   project: ArtefactAnimator4.sln
   
+after_build:
+  - ps: .\nuget\pack.ps1
+  
 artifacts:
   - path: Artefact\Bin\Debug\Artefact.dll
     name: Artefact.dll
