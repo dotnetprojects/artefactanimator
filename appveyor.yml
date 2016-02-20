@@ -1,0 +1,37 @@
+version: 4.0.{build}
+
+branches:
+  only:
+    - master
+
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "{version}"
+  assembly_file_version: "{version}"
+  assembly_informational_version: "{version}"
+
+configuration: Debug
+
+before_build:
+  - nuget restore
+  
+build:
+  project: ArtefactAnimator4.sln
+  
+artifacts:
+  - path: Artefact\Bin\Debug\Artefact.dll
+    name: Artefact.dll
+  - path: Artefact\Bin\Debug\Artefact.pdb
+    name: Artefact.pdb
+  - path: '**\Artefact*.nupkg'
+
+#uncomment to publish to NuGet
+deploy:
+  provider: NuGet
+  api_key:
+    secure: OrhpK2cLXXcoWW+hU6xAv3eeKIbATEFbenteoFsi9EfM1yyDof6ZuNKAsA3Vy6vb
+  artifact: /.*\.nupkg/
+  
+  
+  

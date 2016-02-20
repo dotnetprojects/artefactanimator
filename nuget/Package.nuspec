@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>DotNetProjects.ArtefactAnimator</id>
+    <version>$version$</version>
+    <authors>DotNetProjects</authors>
+    <owners>DotNetProjects</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/dotnetprojects/artefactanimator</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Code Based Animation in WPF</description>
+    <copyright>Copyright 2016</copyright>
+  </metadata>
+  <files>
+    <file src="..\Artefact\Bin\Debug\Artefact.dll" target="lib\net40" />
+    <file src="..\Artefact\Bin\Debug\Artefact.pdb" target="lib\net40" />
+  </files>
+</package>
